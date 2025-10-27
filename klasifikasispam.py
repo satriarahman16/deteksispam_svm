@@ -21,7 +21,7 @@ st.write("**Masukkan pesan SMS dan periksa apakah itu **spam** atau bukan menggu
 # 💬 Input Teks Pengguna
 # ===============================
 input_text = st.text_area("Ketik atau tempel pesan SMS di bawah ini:", height=150)
-
+accuracy =0.9441
 # ===============================
 # 🔍 Tombol untuk Prediksi
 # ===============================
@@ -45,11 +45,12 @@ if st.button("Periksa Pesan"):
 # 📊 Info Model (Opsional)
 # ===============================
 with st.expander("ℹ️ Tentang Model"):
-    st.markdown("""
+    st.markdown(f"""
     - **Algoritma:** Support Vector Machine (SVM)  
     - **Kernel:** Linear  
     - **Vectorizer:** TfidfVectorizer (Unigram + Bigram)  
-    - **Tujuan:** Mendeteksi pesan SMS spam dalam bahasa Indonesia  
+    - **Tujuan:** Mendeteksi pesan SMS spam dalam bahasa Indonesia 
+    - **Akurasi Model:** {accuracy*100:.2f}% 
     """)
 
 st.markdown("---")
